@@ -1,36 +1,65 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { graphql, useStaticQuery } from 'gatsby'
+import React from 'react'
+import styled from 'styled-components'
 
-/*
- * This component is built using `gatsby-image` to automatically serve optimized
- * images with lazy loading and reduced file sizes. The image is loaded using a
- * `useStaticQuery`, which allows us to load the image from directly within this
- * component, rather than having to pass the image data down from pages.
- *
- * For more information, see the docs:
- * - `gatsby-image`: https://gatsby.dev/gatsby-image
- * - `useStaticQuery`: https://www.gatsbyjs.com/docs/use-static-query/
- */
+import BackgroundImage from 'gatsby-background-image'
 
-const Image = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "hero.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
+const ArtDirectedBackground = ({ className }) => {
+  const { mobileImage, desktopImage } = useStaticQuery(
+    graphql`
+      query {
+        mobileImage: file(relativePath: { eq: "hero.png" }) {
+          childImageSharp {
+            fluid(maxWidth: 490, quality: 100) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
+          }
+        }
+        desktopImage: file(relativePath: { eq: "hero.png" }) {
+          childImageSharp {
+            fluid(quality: 100, maxWidth: 4160) {
+              ...GatsbyImageSharpFluid_withWebp
+            }
           }
         }
       }
-    }
-  `)
+    `
+  )
+  // Set up the array of image data and `media` keys.
+  // You can have as many entries as you'd like.
+  const sources = [
+    mobileImage.childImageSharp.fluid,
+    {
+      ...desktopImage.childImageSharp.fluid,
+      media: `(min-width: 491px)`,
+    },
+  ]
 
-  if (!data?.placeholderImage?.childImageSharp?.fluid) {
-    return <div>Picture not found</div>
-  }
-
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  return (
+    <BackgroundImage
+      Tag={`section`}
+      id={`media-test`}
+      className={className}
+      fluid={sources}
+    >
+    </BackgroundImage>
+  )
 }
 
-export default Image
+const StyledInnerWrapper = styled.div`
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+const StyledArtDirectedBackground = styled(ArtDirectedBackground)`
+  width: 100%;
+  min-height: 100vh;
+  /* You should set a background-size as the default value is "cover"! */
+  background-size: auto;
+  /* So we won't have the default "lightgray" background-color. */
+  background-color: transparent;
+`
+
+export default StyledArtDirectedBackground
