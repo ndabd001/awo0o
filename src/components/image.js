@@ -15,9 +15,10 @@ const ArtDirectedBackground = ({ className }) => {
             }
           }
         }
+
         desktopImage: file(relativePath: { eq: "hero.png" }) {
           childImageSharp {
-            fluid(quality: 100, maxWidth: 4170) {
+            fluid(quality: 100, maxWidth: 4160) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }
@@ -46,18 +47,11 @@ const ArtDirectedBackground = ({ className }) => {
   )
 }
 
-const StyledInnerWrapper = styled.div`
-  margin-top: 10%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
-
 const StyledArtDirectedBackground = styled(ArtDirectedBackground)`
   width: 100%;
   min-height: 100vh;
   /* You should set a background-size as the default value is "cover"! */
-  background-size: auto;
+  background-size: cover;
   /* So we won't have the default "lightgray" background-color. */
   background-color: transparent;
 `
