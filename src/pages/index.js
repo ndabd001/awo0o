@@ -4,17 +4,13 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import BackgroundImage from "../components/image"
 import SEO from "../components/seo"
-import { ThemeProvider, createTheme, Arwes, Button, Frame } from 'arwes'
+import Dropdown from "../components/dropdown"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Awo0o" />
 
-    <ThemeProvider theme={createTheme()}>
-      <Arwes background='noBackground'>
-        <Button animate>Select...</Button>
-      </Arwes>
-    </ThemeProvider>
+  <Dropdown></Dropdown>
 
   </Layout>
 );
