@@ -12,6 +12,8 @@
 .dropdown {
     position: relative;
     display: inline-block;
+    top:70%;
+    left:47.5%
   }
 
 /* Links inside the dropdown */

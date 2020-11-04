@@ -10,7 +10,7 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Awo0o" />
 
-  <Dropdown></Dropdown>
+    <Dropdown></Dropdown>
 
   </Layout>
 );
