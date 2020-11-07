@@ -12,13 +12,8 @@
 .dropdown {
     position: fixed;
     display: inline-block;
-<<<<<<< HEAD
     top: 65%;
     right: 46.5%;
-=======
-    top:70%;
-    left:47.5%
->>>>>>> 3307158ba8951b95871597e0e851ad94203056d6
   }
 
 /* Links inside the dropdown */
