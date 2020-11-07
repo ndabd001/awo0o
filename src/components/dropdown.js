@@ -10,7 +10,7 @@ const Dropdown = () =>(
           <div class="dropdown">
             <Button>Select...</Button>
             <div class="dropdown-content">
-              <a href="#">Katrina</a>
+              <a href="/normal">Katrina</a>
               <a href="#">Link 2</a>
               <a href="#">Link 3</a>
             </div>
