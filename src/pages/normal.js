@@ -10,6 +10,7 @@ import Pokedex from "../components/pokedex"
 const normalScreen = () => {
   return(
     <Layout>
+      <Link style={divStyle} to="/">Go back</Link>
 
       <ThemeProvider theme={createTheme()}>
         <Row col s={1} l={1}>
