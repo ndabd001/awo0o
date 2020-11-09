@@ -2,7 +2,8 @@ import React from 'react';
 import { ThemeProvider, createTheme, Arwes, Button, Frame, Image, Project, Words } from 'arwes'
 import "./pokedex.css"
 import Key_K from "../images/Key_K.png";
-
+import Left_K from "../images/Expression_1_K.png";
+import Right_K from "../images/Expression_2_K.png";
 
 const Pokedex = () => (
     <ThemeProvider theme={createTheme()}>
@@ -16,7 +17,7 @@ const Pokedex = () => (
                             </Frame>
                         </div>
                         <div style={{ position:"relative", top:"-115px", paddingTop: 20, paddingLeft: 15, maxWidth:"30%", display:"inline-block", alignItems:"right"}}>
-                            <div style={{width:"50%"}}> 
+                            <div style={{width:"50%"}}>
                                 <Frame animate border={false}>
                                         <h1 style={{padding:20,marginBottom:"0px", textAlign:"center"}}>Stats</h1>
                                 </Frame>
@@ -25,7 +26,7 @@ const Pokedex = () => (
                                 <ul style={{maxWidth:"340px",padding:20}}>
                                     <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                                             sed do eiusmod tempor incididunt ut labore et dolore magna
-                                            aliqua. 
+                                            aliqua.
                                     </li>
                                     <li>Blonde</li>
                                     <li>Armenian</li>
@@ -34,13 +35,13 @@ const Pokedex = () => (
                                 </ul>
                             </Frame>
                         </div>
+                        <img style={{width:"300px", display:"inline-block", padding:20}} src={Left_K}>
+                        </img>
                         <img style={{width:"350px", display:"inline-block", padding:20}} src={Key_K}>
                         </img>
-                        <img style={{width:"300px", display:"inline-block", padding:20}} src={Key_K}>
+                        <img style={{width:"300px", display:"inline-block", padding:20}} src={Right_K}>
                         </img>
-                        <img style={{width:"300px", display:"inline-block", padding:20}} src={Key_K}>
-                        </img>
-                        
+
                         <div style={{ padding: 20, position:"block" }}>
                             <Project
                                 animate
@@ -50,7 +51,7 @@ const Pokedex = () => (
                                     <p><Words animate show={anim.entered}>
                                         Lorem ipsum dolor sit amet, consectetur adipisicing elit,
                                         sed do eiusmod tempor incididunt ut labore et dolore magna
-                                        aliqua. 
+                                        aliqua.
                                     </Words></p>
                                 )}
                             </Project>
@@ -59,7 +60,7 @@ const Pokedex = () => (
                 </div>
         </Arwes>
   </ThemeProvider>
-        
+
 )
 
 export default Pokedex
